@@ -40,6 +40,10 @@ app.use(keycloak.middleware({
 app.get('/protected', keycloak.protect(), function (req, res) {
     res.send('Secret data');
 });
+
+app.get('/really-protected', keycloak.protect('demo-client-role'), function (req, res) {
+  res.send('Really secret data');
+});
  
  app.get('/unprotected', function (req, res) {
     res.send('Public data');
@@ -48,3 +52,4 @@ app.get('/protected', keycloak.protect(), function (req, res) {
 app.get('/login', keycloak.protect(), function (req, res) {
   res.redirect('/');
 });
+

@@ -19,7 +19,7 @@
 - Login to http://localhost:8080
 - Create Realm `demo-realm`
 - Create user `demo-user` (Just force password creation)
-- Create client `demo-client`
+- Create client `demo-client` (valid redirect url: `http://localhost:3000/*` Root URL: `http://localhost:3000/`)
 - Click `Authorization enabled` for the demo-client
 
 ### Configure client
@@ -33,3 +33,10 @@ Go to admin UI demo-realm -> demo-client -> installation and copy config to keyk
 
 - Go to http://localhost:3000
 - Get public data and try to get protected data
+
+### Continue to roles
+- Create role under client
+- Create another user
+- Map client role to user
+- Copy paste demo-client -> installation again to json (use-resource-role-mappings added)
+- See how it works
